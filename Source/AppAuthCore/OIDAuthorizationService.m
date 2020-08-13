@@ -122,17 +122,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (BOOL)resumeExternalUserAgentFlowWithURL:(NSURL *)URL {
   // rejects URLs that don't match redirect (these may be completely unrelated to the authorization)
-  if (![self shouldHandleURL:URL]) {
-    return NO;
-  }
+//  if (![self shouldHandleURL:URL]) {
+//    return NO;
+//  }
   
   AppAuthRequestTrace(@"Authorization Response: %@", URL);
   
   // checks for an invalid state
-  if (!_pendingauthorizationFlowCallback) {
-    [NSException raise:OIDOAuthExceptionInvalidAuthorizationFlow
-                format:@"%@", OIDOAuthExceptionInvalidAuthorizationFlow, nil];
-  }
+//  if (!_pendingauthorizationFlowCallback) {
+//    [NSException raise:OIDOAuthExceptionInvalidAuthorizationFlow
+//                format:@"%@", OIDOAuthExceptionInvalidAuthorizationFlow, nil];
+//  }
 
   OIDURLQueryComponent *query = [[OIDURLQueryComponent alloc] initWithURL:URL];
 
@@ -255,14 +255,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (BOOL)resumeExternalUserAgentFlowWithURL:(NSURL *)URL {
   // rejects URLs that don't match redirect (these may be completely unrelated to the authorization)
-  if (![self shouldHandleURL:URL]) {
-    return NO;
-  }
+//  if (![self shouldHandleURL:URL]) {
+//    return NO;
+//  }
   // checks for an invalid state
-  if (!_pendingEndSessionCallback) {
-    [NSException raise:OIDOAuthExceptionInvalidAuthorizationFlow
-                format:@"%@", OIDOAuthExceptionInvalidAuthorizationFlow, nil];
-  }
+//  if (!_pendingEndSessionCallback) {
+//    [NSException raise:OIDOAuthExceptionInvalidAuthorizationFlow
+//                format:@"%@", OIDOAuthExceptionInvalidAuthorizationFlow, nil];
+//  }
   
   
   NSError *error;
